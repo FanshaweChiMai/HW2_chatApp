@@ -1,0 +1,24 @@
+{
+  "name": "HW2_chatApp",
+  "version": "1.0.0",
+  "description": "chat application for standalone and video project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FanshaweChiMai/HW2_chatApp.git"
+  },
+  "keywords": [],
+  "author": "CM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FanshaweChiMai/HW2_chatApp/issues"
+  },
+  "homepage": "https://github.com/FanshaweChiMai/HW2_chatApp",
+  "dependencies": {
+    "express": "^4.16.2",
+    "grunt": "^1.0.1"
+  }
+}
