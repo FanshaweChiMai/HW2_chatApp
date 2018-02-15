@@ -3,23 +3,141 @@
 	margin: 0; padding: 0; box-sizing: border-box;
 }
 
-body { font: 13px Helvetica, Arial; }
+.hidden{
+	display: none;
+}
+$titleColor: #E1CAC9;
+$msgColor: #A3F110;
+$mainFont: 'Raleway';
+$titleFont: 'Permanent Marker', cursive;
 
-form {
-	background: #000;
-	padding: 3px;
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-
-	input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
-
-	button { width: 9%; background: rgb(130, 224,255); border: none; padding: 10px; }
+@mixin scrollbar($changeWidth) {
+  -webkit-scrollbar:$changeWidth;
+  -moz-scrollbar: $changeWidth ;
+  -ms-scrollbar: $changeWidth;
+  scrollbar : $changeWidth;
 }
 
-#messages {
-	list-style-type: none; margin: 0; padding: 0;
+@mixin scrollbar-track($changeStyle) {
+  -webkit-scrollbar-track:$changeStyle;
+  -moz-scrollbar-track: $changeStyle ;
+  -ms-scrollbar-track: $changeStyle;
+  scrollbar-track : $changeStyle;
+}
 
-	li { padding: 5px 10px;	}
-	li:nth-child(odd) { background: #eee; }
+@mixin scrollbar-thumb($changeColor) {
+  -webkit-scrollbar-thumb:$changeColor;
+  -moz-scrollbar-thumb: $changeColor ;
+  -ms-scrollbar-thumb: $changeColor;
+  scrollbar-thumb : $changeColor;
+}
+
+body {
+	font: 13px Helvetica, Arial;
+	margin: 0 auto;
+	background-image: url("images/chatroomBG.jpeg");
+	background-size: 100%;
+	overflow: auto;
+
+}
+
+.wrapper {
+	width: 960px;
+	margin : 0 auto;
+	font-family: $mainFont, sans-serif;
+	color: $titleColor;
+	background-color: black;
+	border-radius: 5px;
+	overflow-y:auto;
+	@include scrollbar(width(10px));
+	@include scrollbar-track(background-color(#730600));
+	@include scrollbar-thumb(background-color($titleColor));
+	h2{
+			text-align: center;
+		 color: $titleColor;
+		 font-family: $titleFont, sans-serif;
+		 background-color: black;
+		 padding: 30px 0;
+		 font-size: 50px;
+		}
+
+	#nickNameInput{
+		font-family: $mainFont, sans-serif;
+		font-size: 30px;
+		text-align: center;
+		padding: 20px;
+		width: 100%;
+		border: 0px solid $titleColor;
+    border-bottom-width: 1px;
+    background-color: black;
+		margin: 0 auto;
+		color: #FF3A11;
+	}
+}
+	form {
+		background: #000;
+		padding: 3px;
+		position: relative;
+		bottom: 0;
+		width: 100%;
+		font-family: $mainFont;
+
+		input {
+			border: none;
+			padding: 10px;
+			width: 90%;
+			margin-right: 0.5%;
+			background-color: black;
+			color: $titleColor;
+			font-size: 20px;
+		}
+
+		button {
+			width: 9%;
+			background: #730600;
+			border: none;
+			padding: 10px;
+			font-size: 15px
+
+		}
+	}
+
+
+
+#messages {
+	list-style-type: none;
+	margin: 0;
+	padding: 10px;
+  color : $msgColor;
+	width: 100%;
+	height:auto;
+	overflow-y: scroll;
+
+
+li {
+		padding: 5px 10px;
+		float: right;
+		padding: 10px;
+		width: auto;
+		height: auto;
+		border-radius: 40px;
+		clear:both;
+		background-color: #0A160E;
+		border: 0px solid;
+		border-color: #FFB611;
+		font-size: 25px;
+	}
+
+	li:nth-child(odd) {
+		background-color: black;
+		float: left;
+		clear:both;
+		border-color: #7f7f7f;
+		border: 2px solid;
+		color: #FFB611;
+		border-radius: 40px;
+		font-size: 25px;
+
+	}
+
 }
